@@ -146,6 +146,10 @@ type Config struct {
 
 	// For testing convenience.
 	stubResponses map[string]stubResponse
+
+	// Enable Strict mode for FTP connections.  This performs checks such as the
+	// size check for the downloaded file.
+	Strict bool
 }
 
 // Client maintains a connection pool to the FTP server(s), so you typically only

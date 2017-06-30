@@ -43,7 +43,7 @@ func (c *Client) Retrieve(path string, dest io.Writer) error {
 		}
 	}
 
-	if size != -1 && bytesSoFar != size {
+	if size != -1 && bytesSoFar != size && c.config.Strict {
 		return ftpError{
 			err:       fmt.Errorf("expected %d bytes, got %d", size, bytesSoFar),
 			temporary: true,
